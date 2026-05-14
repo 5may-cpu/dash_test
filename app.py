@@ -11,7 +11,7 @@ GRADE_ORDER = ["A", "B", "C", "D"]
 
 @st.cache_data
 def load_data() -> pd.DataFrame:
-    df = pd.read_csv(DATA_PATH, encoding="cp949")
+    df = pd.read_csv("score.csv", encoding="cp949")
     df["반"] = df["반"].astype(str)
     df["평균"] = pd.to_numeric(df["평균"], errors="coerce")
     df["등급"] = df["등급"].astype(str)
